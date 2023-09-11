@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="zhaoyan@172.18.32.153:22" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="Scse09064@10.1.40.214:22">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="zhaoyan1@10.1.40.71:22">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="zhaoyan@172.18.32.125:22">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/data7/zhaoyan/code/aasist-main" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="zhaoyan@172.18.32.153:22">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/data6/zhaoyan/code/aasist-main" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>

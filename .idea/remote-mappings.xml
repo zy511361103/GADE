@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteMappingsManager">
+    <list>
+      <list>
+        <remote-mappings server-id="python@sftp://zhaoyan@172.18.32.153:22/data1/zhaoyan/anaconda3/envs/torch2/bin/python">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/data1/zhaoyan/code/aasist-main" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@sftp://zhaoyan@172.18.32.125:22/data2/zhaoyan/anaconda3/envs/torch2/bin/python" />
+        <remote-mappings server-id="python@sftp://zhaoyan@172.18.32.153:22/data1/zhaoyan/anaconda3/envs/zypytorch/bin/python" />
+      </list>
+    </list>
+  </component>
+</project>
