@@ -1,15 +1,16 @@
 import os
+
 os.environ["OMP_NUM_THREADS"] = "1"
 from data_utils import genSpoof_list, extract_eval_features, \
     extract_train_features, normalize_eval_spec_data, normalize_train_spec_data
 
 wav2vec_pretrained_path = "/data6/zhaoyan/code/CA-MSER-main/features_extraction/pretrained_model/wav2vec2-base-960h"
-ext = '.flac'
 cut = 64600  # take ~4 sec audio (64600 samples)
 
 
 def gen_train_data(db_path, list_path, db_name, save_path):
     # train data
+    ext = os.path.splitext(os.listdir(db_path)[0])[-1]
     train_labels, train_list_IDs = genSpoof_list(dir_meta=list_path,
                                                  db_name=db_name,
                                                  is_train=True,
@@ -21,6 +22,7 @@ def gen_train_data(db_path, list_path, db_name, save_path):
 
 def gen_dev_data(db_path, list_path, db_name, save_path):
     # dev data
+    ext = os.path.splitext(os.listdir(db_path)[0])[-1]
     dev_labels, dev_list_IDs = genSpoof_list(dir_meta=list_path,
                                              db_name=db_name,
                                              is_train=False,
@@ -32,6 +34,7 @@ def gen_dev_data(db_path, list_path, db_name, save_path):
 
 def gen_eval_data(db_path, list_path, db_name, save_path):
     # eval data
+    ext = os.path.splitext(os.listdir(db_path)[0])[-1]
     eval_list_IDs = genSpoof_list(dir_meta=list_path,
                                   db_name=db_name,
                                   is_train=False,
@@ -40,22 +43,24 @@ def gen_eval_data(db_path, list_path, db_name, save_path):
     extract_eval_features(db_path, eval_list_IDs, cut, wav2vec_pretrained_path, ext, save_path)
     normalize_eval_spec_data(features_path=save_path)
 
-#Train:
+
+# Train:
 train_wav_path = '/data6/zhaoyan/data/ADD2023/Track1.2/train/wav/'
 train_label_path = '/data6/zhaoyan/data/ADD2023/Track1.2/train/label.txt'
 train_feat_save_path = '/data6/zhaoyan/code/aasist-main/data/ADD2023/train/'
 
-#Dev:
+# Dev:
 dev_wav_path = '/data6/zhaoyan/data/ADD2023/Track1.2/dev/wav/'
 dev_label_path = '/data6/zhaoyan/data/ADD2023/Track1.2/dev/label.txt'
 dev_feat_save_path = '/data6/zhaoyan/code/aasist-main/data/ADD2023/dev/'
-train_and_dev_database_name = "ADD"
+train_and_dev_database_name = "ADD"  # ASV2019,ADD,Emofake
 
-#Eval:
-eval_wav_path = '/data1/zhaoyan/data/ASV2019_LA/eval/flac/'
-eval_label_path = '/data1/zhaoyan/data/ASV2019_LA/ASVspoof2019_LA_cm_protocols/ASVspoof2019.LA.cm.eval.trl.txt'
-eval_feat_save_path = "/data6/zhaoyan/code/aasist-main/data/ASV/2019test/"
-eval_database_name = "ASV2019"
+# Eval:
+eval_wav_path = '/data6/zhaoyan/data/ADD2023/Track1.2/testR1/wav/'
+eval_label_path = '/data6/zhaoyan/data/ADD2023/Track1.2/testR1/label.txt'
+eval_feat_save_path = "/data6/zhaoyan/code/aasist-main/data/ADD2023/test/"
+eval_database_name = "ADD"  # ASV2019,ADD,Emofake
+
 # gen_train_data(train_wav_path, train_label_path, train_and_dev_database_name, train_feat_save_path)
 # gen_dev_data(dev_wav_path, dev_label_path, train_and_dev_database_name, dev_feat_save_path)
 gen_eval_data(eval_wav_path, eval_label_path, eval_database_name, eval_feat_save_path)

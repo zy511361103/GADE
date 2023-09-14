@@ -277,13 +277,13 @@ if __name__ == "__main__":
     parser.add_argument("--seed", type=int, default=3742, help="random seed (default: 1234)")
     parser.add_argument("--eval", action="store_true",
                         default=True, help="when this flag is given, evaluates given model and exit")
-    parser.add_argument('--pick', type=str, default='2')  # 0为普通测试，1为分情感测试，2为分系统测试
+    parser.add_argument('--pick', type=str, default='0')  # 0为普通测试，1为分情感测试，2为分系统测试
     parser.add_argument('--system', type=str, default='S7')  # pick=2时有效
     parser.add_argument('--emotion', type=str, default='Sad')  # pick=1时有效
-    parser.add_argument("--exp_name", type=str, default='emo_aasist_EFEn', help="comment to describe the saved model")
+    parser.add_argument("--exp_name", type=str, default='GADE', help="comment to describe the saved model")
     parser.add_argument("--trained_models", type=list,
-                        default=["/data6/zhaoyan/code/aasist-main/exp/emo_aasist_EFEn/models/epoch_10_0.000.pth",
-                                 "/data6/zhaoyan/code/aasist-main/exp/emo_aasist_EFEn/models/epoch_15_0.000.pth",
-                                 "/data6/zhaoyan/code/aasist-main/exp/emo_aasist_EFEn/models/epoch_20_0.000.pth"],
+                        default=["data/exp/GADE/models/epoch_10_0.000.pth",
+                                 "data/exp/GADE/models/epoch_15_0.000.pth",
+                                 "data/exp/GADE/models/epoch_20_0.000.pth"],
                         help="训练好的模型列表，直接取三次平均")
     main(parser.parse_args())
