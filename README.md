@@ -7,8 +7,9 @@ We train GADE using the ASVspoof 2019 logical access(https://datashare.ed.ac.uk/
 You can also use EmoFake(https://drive.google.com/file/d/1aYPNVCVIBs6c9er_bhT3U8YzClF-EDsR/viewusp=sharing) for training.
 
 ### Pre-trained SER
-https://github.com/Vincent-ZHQ/CA-MSER You can use any emtoion datasets to train CA-MSER.
-We provided the checkpoint trained with ESD.
+CA-MSER：https://github.com/Vincent-ZHQ/CA-MSER 
+<br />You can use any emtoion datasets to train CA-MSER.
+<br />We provided the checkpoint trained with ESD:https://drive.google.com/file/d/1mnPyIbicvQl70CBqJapltDgDgw0B0rcr/view?usp=sharing.
 
 ### Feature extraction
 ```
